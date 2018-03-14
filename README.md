@@ -26,6 +26,7 @@
         }
     }
 
+将home.sql文件导入mysql数据库中
 
 ## QuickStart
 
