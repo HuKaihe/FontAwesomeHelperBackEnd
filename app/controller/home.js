@@ -5,6 +5,9 @@ class HomeController extends Controller {
 
   // 为后面引入同构方案做铺垫
   async index() {
+    if (!this.app.visitAmount) {
+      await this.service.home.getVisitAmount();
+    }
     const visitAmount = ++this.app.visitAmount;
     const ctx = this.ctx;
     const { id } = ctx.session.user || {};
@@ -39,7 +42,9 @@ class HomeController extends Controller {
     const { username, password, email, schemastr } = ctx.request.body;
     const resultObj = await this.service.home.signup(username, password, email, schemastr);
     const { code, message, data } = resultObj;
-    ctx.session.user = { id: data.id };
+    if (code === 200) {
+      ctx.session.user = { id: data.id };
+    }
     ctx.body = {
       code,
       data,

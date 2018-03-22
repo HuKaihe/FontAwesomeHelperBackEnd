@@ -7,7 +7,18 @@ class HomeService extends Service {
 
   async login(username, password) {
     const user = await this.app.mysql.get('home', { username, password });
+    if (user) {
+      await this.app.mysql.update('home', {
+        id: user.id,
+        last_login_time: this.app.mysql.literals.now,
+        visit_times: ++user.visit_times,
+      });
+    }
     return user || {};
+  }
+
+  async getVisitAmount() {
+    this.app.visitAmount = parseInt((await this.app.mysql.get('info', { id: 1 })).value);
   }
 
   async signup(username, password, email, schemastr) {
@@ -34,7 +45,7 @@ class HomeService extends Service {
   }
 
   async asyncData(id, schemastr) {
-    const result = await this.app.mysql.update('home', { id, schemastr }); // 更新 posts 表中的记录
+    const result = await this.app.mysql.update('home', { id, schemastr });
     // 判断更新成功
     return result.affectedRows === 1;
   }

@@ -11,7 +11,7 @@
  Target Server Version : 50721
  File Encoding         : utf-8
 
- Date: 03/14/2018 13:49:59 PM
+ Date: 03/22/2018 15:21:24 PM
 */
 
 SET NAMES utf8;
@@ -27,7 +27,11 @@ CREATE TABLE `home` (
   `email` varchar(255) NOT NULL,
   `schemastr` text,
   `password` varchar(255) NOT NULL,
+  `sign_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `last_login_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `last_operate_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `visit_times` int(11) DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
 
 SET FOREIGN_KEY_CHECKS = 1;

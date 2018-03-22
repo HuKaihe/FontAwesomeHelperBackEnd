@@ -26,6 +26,8 @@ const sendMail = function(recipient, subject, html) {
   }, function(error) {
     if (error) {
       console.log(error);
+      console.log('发送失败');
+      return;
     }
     console.log('发送成功');
   });

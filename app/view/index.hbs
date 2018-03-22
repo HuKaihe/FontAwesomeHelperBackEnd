@@ -1,22 +1,94 @@
 <html>
-  <head>
-    <title>FontAwesome Helper</title>
-    <meta http-equiv="keywords" content="FontAwesome, Icon, IconManageHelper">
-    <meta http-equiv="description" content="FontAwesome Helper致力于帮助前端工程师和交互设计师方便快捷的寻找、选择和管理fontawesome图标，由阿里巴巴恩言出品，已在GitHub上开源">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <link rel="shortcut icon" href="/public/image/hukaihe.ico" />
-    <link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.css" rel="stylesheet">
-    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://localhost:8080/bundle.css" />
-  </head>
-  <body>
-      <div id="app" class="app">
 
+<head>
+  <title>FontAwesome 助手</title>
+  <meta http-equiv="keywords" content="FontAwesome, Icon, IconManageHelper">
+  <meta http-equiv="description" content="FontAwesome Helper致力于帮助前端工程师和交互设计师方便快捷的寻找、选择和管理fontawesome图标，由阿里巴巴恩言出品，已在GitHub上开源">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <link rel="shortcut icon" href="/public/image/hukaihe.ico" />
+  <link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.css" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="http://localhost:8080/bundle.css" />
+</head>
+
+<body>
+  <div id="app" class="app">
+    <div class="loading-model">
+      <div class="loading">
+        <i class="fa fa-spinner fa-spin"></i>
+        <p>加载中,请亲稍等...</p>
       </div>
-      <script>
-        var visitAmount = {{visitAmount}};
-        var myData = {{{myData}}}
-      </script>
-      <script src="http://localhost:8080/bundle.js"></script>
-  </body>
+    </div>
+    <div class="container">
+      <div class="left-menu">
+        <div class="site-title">FontAwesome Helper
+          <div class="sub-title">您的FontAwesome图标管理专家</div>
+        </div>
+        <div class="quick-search">
+          <input type="text" class="text-input" placeholder="根据图标名快速查找图标">
+          <i class="icon fa fa-search"></i>
+        </div>
+        <ul class="icon-collections">
+          <li title="双击可对自定义的集合重命名，拖拽可调整集合顺序" draggable="true" class="no-rename active">
+            <div class="collection-intro">
+              <i class="icon fa fa-tasks"></i>全部图标</div>
+          </li>
+          <li title="双击可对自定义的集合重命名，拖拽可调整集合顺序" draggable="true" class="no-rename">
+            <div class="collection-intro">
+              <i class="icon fa fa-shopping-cart"></i>我的收藏</div>
+          </li>
+          <li class="no-new-collection">
+            <i class="fa fa-plus add-new-collection"></i>
+            <div class="new-collection-form">
+              <input value="" class="text-input new-collection-input" placeholder="新的图标集合">
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="top-bar">
+        <div class="info-module">
+          <img src="http://localhost:7001/public/image/logo.png" alt="hkh logo" class="logo">
+          <div class="info-module-block">
+            <div class="top-item">
+              <i class="fa fa-area-chart"></i>访问量：</div>
+            <div class="top-item">
+              <i class="fa fa-envelope"></i>agentKyle@foxmail.com</div>
+            <div class="top-item">
+              <i class="fa fa-book"></i>
+              <a href="https://hukaihe.gitbooks.io/fontawesome/content/" target="_blank" rel="noopener noreferrer">使用说明</a>
+            </div>
+          </div>
+          <div class="info-module-block">
+            <div class="top-item">
+              <i class="fa fa-bank"></i>备案号：冀ICP备18005603号</div>
+          </div>
+          <div class="info-module-block">
+            <div class="top-item">
+              <i class="fa fa-newspaper-o"></i>广告：阿里巴巴国际站前端团队招聘，有意者请将简历投到我邮箱，恩言收</div>
+          </div>
+          <div class="info-module-block">
+            <div class="top-item">
+              <i class="fa fa-laptop"></i>声明：本站已开源（
+              <a href="https://github.com/HuKaihe/FontAwesomeHelper" target="_blank" rel="noopener noreferrer">FontAwesomeHelper</a>），所有图标的版权归
+              <a href="http://fontawesome.dashgame.com/" target="_blank" rel="noopener noreferrer">fontawesome</a>
+            </div>
+          </div>
+        </div>
+        <div class="user-module">
+          <div class="has-not-login">
+            <input placeholder="用户名" class="text-input small" value="">
+            <input type="password" placeholder="密码" class="text-input small" value="">
+            <button class="btn">登录</button>/
+            <button class="btn">注册</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var visitAmount = {{ visitAmount }};
+      var myData = {{{ myData }}}
+    </script>
+    <script src="http://localhost:8080/bundle.js"></script>
+</body>
+
 </html>
