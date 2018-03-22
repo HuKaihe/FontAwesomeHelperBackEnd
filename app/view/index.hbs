@@ -13,12 +13,6 @@
 
 <body>
   <div id="app" class="app">
-    <div class="loading-model">
-      <div class="loading">
-        <i class="fa fa-spinner fa-spin"></i>
-        <p>加载中,请亲稍等...</p>
-      </div>
-    </div>
     <div class="container">
       <div class="left-menu">
         <div class="site-title">FontAwesome Helper
@@ -84,10 +78,17 @@
         </div>
       </div>
     </div>
+    <div class="loading-model">
+      <div class="loading">
+        <i class="fa fa-spinner fa-spin"></i>
+        <p>加载中,请亲稍等... ...</p>
+      </div>
+    </div>
     <script>
       var visitAmount = {{ visitAmount }};
       var myData = {{{ myData }}}
     </script>
     <script src="/public/js/bundle.js"></script>
 </body>
+
 </html>
