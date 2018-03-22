@@ -26,7 +26,7 @@ module.exports = username => `<style>
         </p>
         <p>
             您也可以查看
-            <a href="https://hukaihe.gitbooks.io/fontawesome/content/" target="_blank">
+            <a href="https://www.jianshu.com/p/59837ed1d10d" target="_blank">
                 Fontawesome Helper使用手册
             </a>
             以获得更多帮助
