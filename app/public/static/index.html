@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="keywords" content="胡凯赫,博客,个人主页">
+    <meta http-equiv="description" content="这是胡凯赫的个人主页。胡凯赫是一名学生，web前端工程师，神学研究爱好者，他还想成为一名作家。所以你可以在这里看到很多技术博客，原创小说还有一些关于神学研究的理论">
+    <title>胡凯赫的个人主页</title>
+    <link rel="shortcut icon" href="http://fontawesome.hukaihe.com/public/image/hukaihe.ico" />
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        ul {
+            margin: 0;
+            list-style: none;
+            padding: 0;
+        }
+
+        html,
+        body {
+            font-weight: 200;
+            height: 100%;
+            width: 100%;
+            position: relative;
+            background: #D8D8D8;
+            margin: 0;
+            padding: 0;
+        }
+
+        html *,
+        body * {
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 780px;
+            height: 450px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        .box .box-left {
+            z-index: 2;
+            float: left;
+            background: url('https://cdn.yuque.com/yuque/2018/jpeg/413af7bc-a184-41f4-96ec-d5fca1be7ef1.jpeg');
+            background-size: 100% 100%;
+            width: 480px;
+            height: 450px;
+            position: relative;
+            border-radius: 5px;
+            color: #ffffff;
+        }
+
+        .box .box-left .cover {
+            border-radius: 5px;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .box .box-left .portrait {
+            display: block;
+            margin: 35px auto;
+            border-radius: 55px;
+            width: 110px;
+            height: 110px;
+        }
+
+        .box .box-left .introduction li {
+            text-align: center;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+
+        .box .box-left .introduction li.name {
+            font-size: 18px;
+        }
+
+        .box .box-left .contact {
+            display: flex;
+            justify-content: space-around;
+            padding: 0 70px;
+            font-size: 20px;
+            margin-top: 85px;
+        }
+
+        .box .box-left .contact a {
+            font-size: 20px;
+            color: white;
+        }
+
+        .box .box-left .motto {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        .box .box-left .play {
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            background: #FD6B78;
+            position: absolute;
+            bottom: -25px;
+            left: 0;
+            padding-left: 5px;
+            right: 0;
+            font-size: 25px;
+            text-align: center;
+            line-height: 50px;
+            color: #ffffff;
+            margin: auto;
+        }
+
+        .box .box-right {
+            background: #ffffff;
+            float: left;
+            width: 300px;
+            position: relative;
+            left: -5px;
+            top: 5px;
+            padding-left: 5px;
+            border-radius: 5px;
+            height: 435px;
+            box-shadow: 5px 5px 8px #ccc9c9;
+        }
+
+        .box .box-right .logo {
+            display: block;
+            margin: 35px auto;
+            border-radius: 35px;
+            width: 70px;
+            height: 70px;
+        }
+
+        .box .box-right .site-title {
+            margin: 5px auto 15px;
+            text-align: center;
+        }
+
+        .box .box-right .site-list {
+            padding-left: 55px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .box .box-right .site-list li {
+            margin-bottom: 10px;
+        }
+
+        .box .box-right .site-list li i {
+            margin-right: 5px;
+        }
+
+        .box .box-right .site-list li a {
+            color: #4A90E2;
+            font-size: 14px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box-left">
+            <div class="cover">
+                <img src="https://cdn.yuque.com/yuque/2018/png/de7d2e64-13b5-4e61-8720-fde137412dce.png" class="portrait" />
+                <ul class="introduction">
+                    <li class="name">
+                        胡凯赫
+                    </li>
+                    <li>
+                        web前端工程师
+                    </li>
+                    <li>
+                        <i class="fa fa-map-marker"></i>
+                        阿里巴巴（恩言）
+                    </li>
+                </ul>
+                <ul class="contact">
+                    <li>
+                        <a href="https://github.com/HuKaihe" target="_blank">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:agentkyle@foxmail.com" target="_blank">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <i class="fa fa-star-o"></i>
+                    </li>
+                </ul>
+                <div class="motto animated pulse">
+                    但是知识是使人自高自大，唯有爱心能够造就人
+                </div>
+                <div class="play">
+                    <i class="fa fa-play"></i>
+                </div>
+            </div>
+        </div>
+        <div class="box-right">
+            <img src="https://cdn.yuque.com/yuque/2018/png/68ee8e88-ffb6-4556-a193-968e808c433e.png" class="logo" />
+            <div class="site-title">旗下网站</div>
+            <ul class="site-list">
+                <li>
+                    <i class="fa fa-book"></i>
+                    <a href="http://blog.hukaihe.com" target="_blank">HKH博客</a>
+                </li>
+                <li>
+                    <i class="fa fa-font-awesome"></i>
+                    <a href="http://fontawesome.hukaihe.com" target="_blank">Fontawesome 助手</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        $('.introduction li').addClass('animated fadeInUp');
+        $('.portrait').addClass('animated fadeInUp');
+        $('.site-list li').addClass('animated fadeInUp');
+        $('.contact li').addClass('animated fadeInLeftBig');
+        $('.box-right').addClass('animated fadeInLeft');
+    </script>
+</body>
+</html>
