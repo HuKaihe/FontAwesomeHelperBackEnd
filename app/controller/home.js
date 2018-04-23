@@ -10,6 +10,14 @@ class HomeController extends Controller {
     }
     const visitAmount = ++this.app.visitAmount;
     const ctx = this.ctx;
+    ctx.helper.getIpInfo(ctx.req, (err, ip, data) => {
+      if (err || typeof data === 'number') {
+        ctx.logger.error('ip解析错误:');
+        ctx.logger.error(ip);
+        return;
+      }
+      this.service.home.recordVisit(Object.assign(data, { ip, agent: ctx.request.header['user-agent'] }));
+    });
     const { id } = ctx.session.user || {};
     const user = await this.service.home.getUser(id);
     const { username = '', schemastr = '' } = user || {};

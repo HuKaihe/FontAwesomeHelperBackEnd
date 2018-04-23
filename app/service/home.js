@@ -21,6 +21,10 @@ class HomeService extends Service {
     this.app.visitAmount = parseInt((await this.app.mysql.get('info', { id: 1 })).value);
   }
 
+  async recordVisit({ ip, country, province, city, agent }) {
+    await this.app.mysql.insert('visit', { ip, country, province, city, agent });
+  }
+
   async signup(username, password, email, schemastr) {
     const mysql = this.app.mysql;
     const isUsernameRepeated = !!(await mysql.get('home', { username }));

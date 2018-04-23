@@ -1,5 +1,6 @@
 'use strict';
 
+const http = require('http');
 const nodemailer = require('nodemailer');
 const smtpTransport = require('nodemailer-smtp-transport');
 const config = require('../../config/.config.js');
@@ -33,4 +34,38 @@ const sendMail = function(recipient, subject, html) {
   });
 };
 
-module.exports = { sendMail };
+function getClientIp(req) {
+  let ip =
+    req.headers['X-Real-IP'] ||
+    req.headers['x-forwarded-for'] ||
+    req.ip ||
+    req.connection.remoteAddress ||
+    req.socket.remoteAddress ||
+    req.connection.socket.remoteAddress || '';
+  if (ip.split(',').length > 0) {
+    ip = ip.split(',')[0];
+  }
+  return ip;
+}
+
+const getIpInfo = function(req, cb) {
+  const ip = getClientIp(req);
+  const sina_server = 'http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json&ip=';
+  const url = sina_server + ip;
+  http.get(url, function(res) {
+    const code = res.statusCode;
+    if (code === 200) {
+      res.on('data', function(data) {
+        try {
+          cb(null, ip, JSON.parse(data));
+        } catch (err) {
+          cb(err);
+        }
+      });
+    } else {
+      cb({ code });
+    }
+  }).on('error', function(e) { cb(e); });
+};
+
+module.exports = { sendMail, getIpInfo };
